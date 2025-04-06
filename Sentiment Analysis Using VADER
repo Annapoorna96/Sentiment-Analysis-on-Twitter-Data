@@ -1,0 +1,15 @@
+# Initialize SentimentIntensityAnalyzer
+sia = SentimentIntensityAnalyzer()
+
+# Create a function to categorize the sentiment
+def get_sentiment(tweet):
+    score = sia.polarity_scores(tweet)
+    if score['compound'] >= 0.05:
+        return 'Positive'
+    elif score['compound'] <= -0.05:
+        return 'Negative'
+    else:
+        return 'Neutral'
+
+# Apply sentiment function to the tweets
+tweets_df['Sentiment'] = tweets_df['Tweet'].apply(get_sentiment)
