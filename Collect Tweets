@@ -1,0 +1,11 @@
+# Fetch tweets with a specific hashtag or keyword
+tweets = tweepy.Cursor(api.search, q='Python', lang='en', since='2023-01-01').items(100)
+
+# Create a DataFrame to store the tweets
+tweets_data = {'Tweet': [], 'Created At': []}
+for tweet in tweets:
+    tweets_data['Tweet'].append(tweet.text)
+    tweets_data['Created At'].append(tweet.created_at)
+
+tweets_df = pd.DataFrame(tweets_data)
+print(tweets_df.head())
