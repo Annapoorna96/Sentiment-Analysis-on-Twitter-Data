@@ -1,0 +1,4 @@
+import tweepy
+import pandas as pd
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import matplotlib.pyplot as plt
