@@ -1,0 +1,10 @@
+# Visualize the sentiment distribution
+sentiment_counts = tweets_df['Sentiment'].value_counts()
+sentiment_counts.plot(kind='bar', color=['green', 'red', 'gray'])
+plt.title('Sentiment Distribution of Tweets')
+plt.xlabel('Sentiment')
+plt.ylabel('Count')
+plt.show()
+
+# Display the DataFrame with Sentiments
+print(tweets_df.head())
